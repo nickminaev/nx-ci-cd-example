@@ -1,0 +1,24 @@
+{
+  "name": "ci-cd-optimizations-for-microservices",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ci-cd-optimizations-for-microservices/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "ci-cd-optimizations-for-microservices:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ci-cd-optimizations-for-microservices:build:development"
+        },
+        "production": {
+          "buildTarget": "ci-cd-optimizations-for-microservices:build:production"
+        }
+      }
+    }
+  }
+}
