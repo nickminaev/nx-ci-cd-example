@@ -1,0 +1,30 @@
+{
+  "name": "parrots-service",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "parrots-service/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "parrots-service:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "parrots-service:build:development"
+        },
+        "production": {
+          "buildTarget": "parrots-service:build:production"
+        }
+      }
+    },
+    "build": {
+      "options": {
+        "generatePackageJson": true
+      }
+    },
+    "docker-build": {}
+  }
+}

@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ci-cd-optimizations-for-microservices/auth-guard": [
+        "libs/auth-guard/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,30 @@
+{
+  "name": "cats-service",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "cats-service/src",
+  "projectType": "application",
+  "tags": ["nestjs", "backend"],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "cats-service:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "cats-service:build:development"
+        },
+        "production": {
+          "buildTarget": "cats-service:build:production"
+        }
+      }
+    },
+    "build": {
+      "options": {
+        "generatePackageJson": true
+      }
+    },
+    "docker-build": {}
+  }
+}

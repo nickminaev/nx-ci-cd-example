@@ -14,6 +14,15 @@
     ],
     "sharedGlobals": []
   },
+  "targetDefaults": {
+    "docker-build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker build --build-arg='TARGET_APP={projectName}' . -t {projectName}",
+        "forwardAllArgs": true
+      }
+    }
+  },
   "plugins": [
     {
       "plugin": "@nx/webpack/plugin",
@@ -34,7 +43,9 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/ci-cd-optimizations-for-microservices-e2e/**/*"]
+      "exclude": [
+        "**/*-e2e/**/*"
+      ]
     }
   ]
 }

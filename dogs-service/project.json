@@ -1,0 +1,30 @@
+{
+  "name": "dogs-service",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "dogs-service/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "dogs-service:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "dogs-service:build:development"
+        },
+        "production": {
+          "buildTarget": "dogs-service:build:production"
+        }
+      }
+    },
+    "build": {
+      "options": {
+        "generatePackageJson": true
+      }
+    },
+    "docker-build": {}
+  }
+}
