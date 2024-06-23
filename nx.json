@@ -18,8 +18,22 @@
     "docker-build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "docker build --build-arg='TARGET_APP={projectName}' . -t {projectName}",
-        "forwardAllArgs": true
+        "commands": [
+          {
+            "command": "version=$(cat {projectRoot}/package.json | jq .version | tr -d '\",\"\"' ); docker build --build-arg='TARGET_APP={projectName}' . -t {projectName}:$version "
+          }
+        ]
+      }
+    },
+    "docker-release": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["docker-build"],
+      "options": {
+        "commands": [
+          {
+            "command": "echo hello!"
+          }
+        ]
       }
     }
   },
@@ -47,5 +61,8 @@
         "**/*-e2e/**/*"
       ]
     }
-  ]
+  ],
+  "release": {
+    "projects": ["*", "!libs/**", "!*e2e*"]
+  }
 }
