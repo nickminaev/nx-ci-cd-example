@@ -63,6 +63,9 @@
     }
   ],
   "release": {
-    "projects": ["*", "!libs/**", "!*e2e*"]
+    "projects": ["*", "!libs/**", "!*e2e*"],
+    "version": {
+      "conventionalCommits": true
+     }
   }
 }
