@@ -59,7 +59,7 @@ Wait for it, I can also run now severl `docker build` commands in parallel! Now,
 
 ## The magical Dockerfile
 
-I decided there would be a single Dockerfile with purpose of maintainability and unity. By now you can definitely tell, I dread the DRY creature.
+I decided there would be a single Dockerfile with purpose of maintainability and standartization. And another reason, I dread the DRY creature.
 
 Hence, single Dockerfile. What happens if it suffers from vulnerabilities at the OS or NodeJS level?
 

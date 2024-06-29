@@ -3,10 +3,12 @@ ARG ALPINE_VERSION="3.20"
 FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS build
 ARG TARGET_APP
 WORKDIR /build
-COPY package.json package-lock.json  ./
-RUN npm i
+COPY package*.json ./
+RUN --mount=type=cache,target=/build/npm/cache \
+    npm i --cache /buid/npm/cache
 COPY . ./
-RUN npx nx run ${TARGET_APP}:build
+RUN --mount=type=cache,target=/build/.nx/cache \
+    npx nx run ${TARGET_APP}:build
 FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS execute
 ARG TARGET_APP=${TARGET_APP}
 ARG ALPINE_VERSION=${ALPINE_VERSION}
