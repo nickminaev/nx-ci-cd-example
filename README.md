@@ -65,6 +65,15 @@ Hence, single Dockerfile. What happens if it suffers from vulnerabilities at the
 
 We just upgrade & test the changes for everything at once.
 
+> SOLID principles at play: one of the basic principles are ***IOC*** and ***dependency injection***, 
+> so a single `Dockerfile` might be considered as a dependency injected into the applications.
+> This way, there's only a single place where the dependency is managed and it's the same instance,
+> which is injected over and over. 
+
+## Version management
+
+
+
 # AWS Infrastructure
 
 For the purpose of this tutorial, we'll run NestJS applications on top of EKS?/Lambda?

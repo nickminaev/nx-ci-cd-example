@@ -64,6 +64,11 @@
   ],
   "release": {
     "projects": ["*", "!libs/**", "!*e2e*"],
+    "projectsRelationship": "independent",
+    "releaseTagPattern": "{projectName}@{version}",
+    "changelog": {
+      "projectChangelogs": true
+    },
     "version": {
       "conventionalCommits": true,
       "generatorOptions": {
