@@ -65,5 +65,7 @@ Hence, single Dockerfile. What happens if it suffers from vulnerabilities at the
 
 We just upgrade & test the changes for everything at once.
 
+# AWS Infrastructure
 
+For the purpose of this tutorial, we'll run NestJS applications on top of EKS?/Lambda?
 

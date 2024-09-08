@@ -65,7 +65,10 @@
   "release": {
     "projects": ["*", "!libs/**", "!*e2e*"],
     "version": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "generatorOptions": {
+        "fallbackCurrentVersionResolver": "disk"
+      }
      }
   }
 }
